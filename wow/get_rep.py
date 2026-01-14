@@ -7,9 +7,10 @@ def main():
     print("请输入你的羽毛或者项链的数量")
     count = common.input_digital()
     
+    print("5秒钟后开始自动获取声望")
     time.sleep(5)
     
-    获取声望(count)
+    获取声望(int(count))
 
     print("执行完成！！")
 
