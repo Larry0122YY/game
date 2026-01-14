@@ -22,6 +22,7 @@ def main():
 
     print("执行完成！！")
 
+
 def 拍卖行买东西(times):
     product = (508,375)
     buy = (1200,895)
@@ -56,15 +57,12 @@ def 获取声望(yumao_count):
         common.click_once(mouse1, complete_button, 3)
 
 
-    print("aaaaaaaa")
-
 #附魔前，要打开人物栏和附魔栏
 def 附魔包裹第一格子(times):
     fumo_button = (381, 893)
     confirm_position = (1197, 315)
 
     first_package_cell_position = (2155, 853)
-
 
     for i in range(times):
         mouse1 = mouse.Controller()
