@@ -1,18 +1,14 @@
-import os
 import time
 
+import TOOLS_COMMON as common
 from pynput import mouse
-import win32api
-
 
 def main():
     time.sleep(5)
 
     # 获取鼠标position()
-
+    common.get_mouse_position()
     # 附魔包裹第一格子(7)
-
-
 
     # 附魔做药(14)
 
@@ -31,11 +27,11 @@ def 拍卖行买东西(times):
     buy = (1200,895)
     confirm = (1166,334)
     for i in range(times):
-        mouse1 = mouse.Controller()
+        common.click_once(mouse.Controller(), (100, 100), 1)
 
-        click_once(mouse1,product,.5)
-        click_once(mouse1,buy,1)
-        click_once(mouse1,confirm,2)
+        common.click_once(mouse.Controller(), product, .5)
+        common.click_once(mouse.Controller(), buy, 1)
+        common.click_once(mouse.Controller(), confirm, 2)
 
 
 def 获取声望(yumao_count):
@@ -54,10 +50,10 @@ def 获取声望(yumao_count):
     for i in range(times):
         mouse1 = mouse.Controller()
 
-        click_once_right(mouse1, quest_people, 1.5)
-        click_once(mouse1, kingblood, .5)
-        click_once(mouse1, continue_button, .5)
-        click_once(mouse1, complete_button, 3)
+        common.click_once_right(mouse1, quest_people, 1.5)
+        common.click_once(mouse1, kingblood, .5)
+        common.click_once(mouse1, continue_button, .5)
+        common.click_once(mouse1, complete_button, 3)
 
 
     print("aaaaaaaa")
@@ -73,9 +69,9 @@ def 附魔包裹第一格子(times):
     for i in range(times):
         mouse1 = mouse.Controller()
 
-        click_once(mouse1,fumo_button,.5)
-        click_once(mouse1,first_package_cell_position,1)
-        click_once(mouse1,confirm_position,6)
+        common.click_once(mouse1,fumo_button,.5)
+        common.click_once(mouse1,first_package_cell_position,1)
+        common.click_once(mouse1,confirm_position,6)
 
 
 def 附魔做魔杖(count_times):
@@ -94,24 +90,6 @@ def 附魔做药(count_times):
         mouse1.click(mouse.Button.left, 1)
         time.sleep(6)
 
-def 获取鼠标position():
-    def when_press(x, y):
-        print(str(x) + ":" + str(y))
-
-    with mouse.Listener(on_move=when_press) as ml:
-        ml.join()
-
-def click_once(mouse1,position,delay):
-    win32api.SetCursorPos(position)
-    time.sleep(.5)
-    mouse1.click(mouse.Button.left, 1)
-    time.sleep(delay)
-
-def click_once_right(mouse1,position,delay):
-    win32api.SetCursorPos(position)
-    time.sleep(.5)
-    mouse1.click(mouse.Button.right, 1)
-    time.sleep(delay)
 
 if __name__ == '__main__':
     main()

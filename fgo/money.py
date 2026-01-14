@@ -1,4 +1,3 @@
-import sys
 import time
 import TOOLS_COMMON as fgo
 
